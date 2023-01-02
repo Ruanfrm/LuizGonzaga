@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'xilosa' ;
+    src: url("./fonts/xilosa_.ttf") format(truetype);
+}
+
+/* cor laranja: #ff4600 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+ } 
+ 
+ body {
+    background-color: #c56610;
+    font-family: "xilosa", sans-serif;
+    
+      }
+
+ .title-navbar {
+    font-size: 34px;
+    
+ }
+
+ li {
+    list-style: none;
+ }
+
+ p {
+    font-family: sans-serif;
+ }
+ a {
+   text-decoration: none;
+   color: black;
+   font-size: 25px;
+ }
+
+ .bio-title {
+   font-size: 38px;
+ }
+
+ /* TimeLine */
+
+
+
+ /* The actual timeline (the vertical ruler) */
+ .timeline {
+   position: relative;
+   max-width: 1200px;
+   margin: 0 auto;
+ }
+ 
+ /* The actual timeline (the vertical ruler) */
+ .timeline::after {
+   content: '';
+   position: absolute;
+   width: 6px;
+   background-color: white;
+   top: 0;
+   bottom: 0;
+   left: 50%;
+   margin-left: -3px;
+ }
+ 
+ /* Container around content */
+ .cont {
+   padding: 10px 40px;
+   position: relative;
+   background-color: inherit;
+   width: 50%;
+ }
+ 
+ /* The circles on the timeline */
+ .cont::after {
+   content: '';
+   position: absolute;
+   width: 25px;
+   height: 25px;
+   right: -13px;
+   background-color: white;
+   border: 4px solid #FF9F55;
+   top: 15px;
+   border-radius: 50%;
+   z-index: 1;
+ }
+ 
+ /* Place the container to the left */
+ .left {
+   left: 0;
+ }
+ 
+ /* Place the container to the right */
+ .right {
+   left: 50%;
+ }
+ 
+ /* Add arrows to the left container (pointing right) */
+ .left::before {
+   content: " ";
+   height: 0;
+   position: absolute;
+   top: 22px;
+   width: 0;
+   z-index: 1;
+   right: 30px;
+   border: medium solid white;
+   border-width: 10px 0 10px 10px;
+   border-color: transparent transparent transparent white;
+ }
+ 
+ /* Add arrows to the right container (pointing left) */
+ .right::before {
+   content: " ";
+   height: 0;
+   position: absolute;
+   top: 22px;
+   width: 0;
+   z-index: 1;
+   left: 30px;
+   border: medium solid white;
+   border-width: 10px 10px 10px 0;
+   border-color: transparent white transparent transparent;
+ }
+ 
+ /* Fix the circle for containers on the right side */
+ .right::after {
+   left: -16px;
+ }
+ 
+ /* The actual content */
+ .content {
+   padding: 20px 30px;
+   background-color: white;
+   position: relative;
+   border-radius: 6px;
+ }
+ 
+ /* Media queries - Responsive timeline on screens less than 600px wide */
+ @media screen and (max-width: 600px) {
+ /* Place the timelime to the left */
+   .timeline::after {
+     left: 31px;
+   }
+ 
+ /* Full-width containers */
+   .cont {
+     width: 100%;
+     padding-left: 70px;
+     padding-right: 25px;
+   }
+ 
+ /* Make sure that all arrows are pointing leftwards */
+   .cont::before {
+     left: 60px;
+     border: medium solid white;
+     border-width: 10px 10px 10px 0;
+     border-color: transparent white transparent transparent;
+   }
+ 
+ /* Make sure all circles are at the same spot */
+   .left::after, .right::after {
+     left: 15px;
+   }
+ 
+ /* Make all right containers behave like the left ones */
+   .right {
+     left: 0%;
+   }
+ }
+
+ /* Carousel */
+
+ .container-fotos {
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .coluna-esquerda {
+   width: 50%;
+   margin-bottom: 2rem;
+   float: left;
+ }
+ .coluna-direita {
+   width: 50%;
+   margin-bottom: 2rem;
+   float: right;
+ }
+ @media (max-width: 768px) {
+   .coluna-esquerda,
+   .coluna-direita {
+     width: 100%;
+     float: none;
+   }
+ }
+
+ .img-card {
+   max-width: 500px;
+   width: 80%;
+
+ }
+
+ .abertura-foto {
+   width: 300px;
+   width: 300px;
+   border-radius:50% 50% 50% 50% / 50% 50% 50% 50% ;   
+   margin-right: 20px;
+   margin-bottom: 5rem;
+ }
+
+ .abertura {
+   display: flex;
+   margin-bottom: 4rem;
+   margin-top: 4rem;
+  
+ }
+ .abertura-texto {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 22px;
+   margin-left: 8rem;
+   font-weight: bold;
+ }
+
+ @media (max-width: 1000px) {
+   .abertura {
+      display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         
+      }
+
+      .abertura-texto {
+         margin-top: 1rem;
+         display: flex;
+         margin-left: 0;
+      }
+      .abertura-foto {
+         width: 50%;
+      }
+ }
+
+ .frase-nome{
+   display: flex;
+   justify-content: end;
+   
+ }
+
+ hr {
+   border: 2px solid black;
+   background-color: black;
+ }
+
